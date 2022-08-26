@@ -1,0 +1,47 @@
+[
+    {
+        "username": "vinu_2809",
+        "labels": [
+            "k",
+            "l",
+            "winkey+right",
+            "None",
+            "esc",
+            "alt+tab",
+            "j",
+            "f",
+            "winleft+ctrl+o",
+            "space",
+            "ctrl+alt+delete",
+            "enter",
+            "restart",
+            "volumeup",
+            "volumedown",
+            "ctrl+c",
+            "ctrl+v",
+            "left",
+            "volumemute"
+        ],
+        "freq": [
+            11,
+            7,
+            1,
+            2,
+            12,
+            13,
+            5,
+            16,
+            5,
+            6,
+            6,
+            10,
+            3,
+            3,
+            3,
+            3,
+            1,
+            4,
+            2
+        ]
+    }
+]

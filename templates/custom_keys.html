@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+   /* start of header*/
+   
+* {box-sizing: border-box;}
+    .scroll {
+      width: 20px;
+      height: 200px;
+      overflow: auto;
+      float: left;
+      margin: 0 10px;
+    }
+    
+    .scroll3::-webkit-scrollbar {
+      width: 4px;
+    }
+     
+    .scroll3::-webkit-scrollbar-thumb {
+      background: #04AA6D; 
+    }
+    
+    .scroll3::-webkit-scrollbar-track {
+      background: #666; 
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body { 
+      margin-top: 60px;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .header {
+      z-index: 1;
+      position: fixed;
+      max-height: 100px;
+      font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+      display: flex;
+      flex-direction: row;
+      top: 0%;
+      justify-content: space-between;
+      width: 100%;
+      overflow: visible;
+      background-color: #000000;
+      padding: 20px 10px;
+      margin-top: 0%;
+    }
+    
+    .header a {
+      float: left;
+      color: rgb(255, 255, 255);
+      font-family: 'Montserrat';
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+    }
+    
+    
+    .header a.logo {
+      font-size: 35px;
+      font-weight: 750;
+      letter-spacing: 1px;
+      font-family: 'Montserrat';
+      margin-top: 2%;
+      }
+    
+    
+    .header a:hover {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+       
+    
+    @media screen and (max-width: 100%) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .header-right {
+        float: none;
+      }
+    }
+    
+    /* End of header*/
+
+
+    .city2 {
+  background-color: rgb(255, 241, 244);
+  height:250px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+    margin-top:30px;
+    margin-left:200px;
+    margin-bottom: 50px;
+}
+
+
+.city2-even{
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px #888888;
+  margin: 350px;
+  padding:10px;
+  height:500px;
+  width: 900px;
+  margin-top: 300px;
+}
+
+
+#cars1{
+  width: 300px;
+  height: 45px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dropdowns{
+    display: flex;
+    margin-top: 50px;
+}
+   
+.button {
+  border-radius: 10px;
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  margin: 30px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+.city2-even p{
+    color: black ;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin-left: 29%;  
+
+}
+ 
+ .bt3{
+    border-radius: 10px;
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  margin: 30px 230px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 50%;
+ }
+
+
+</style>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styleshseet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/gestcss.css') }}">-->
+
+<body style="background-color: #ececec;">
+
+
+
+<!-- Header-->
+
+<div class="header">
+  <div style="display: flex;flex-direction: row;">
+    <svg id="Layer_1" data-name="Layer 1" width="60px" height="60px" viewBox="0 0 264.1 255.42"><defs><style>.cls-1{fill:#f1f2f2;}.cls-2{fill:#1d4e26;}.cls-3{fill:#81c341;}.cls-4,.cls-5,.cls-6{stroke:#000;stroke-miterlimit:10;}.cls-5,.cls-6,.cls-7{fill:#fff;}.cls-5{stroke-width:6px;}.cls-6{stroke-width:7px;}</style></defs><ellipse class="cls-1" cx="132.05" cy="127.71" rx="132.05" ry="127.71"/><path d="M289.73,429.89l63.63-107.44c39.61,22.07,64.12,63.13,64.12,107.44,0,67.97-57.67,123.9-127.75,123.9s-127.75-55.93-127.75-123.9c0-47.73,28.43-91.38,72.87-111.88Z" transform="translate(-156.42 -301.42)"/><ellipse class="cls-2" cx="131.72" cy="128.35" rx="120.1" ry="116.54"/><path class="cls-3" d="M286.48,429.77l5.17,108.53c-1.72.07-3.44.11-5.17.11-62.95,0-114.75-49.04-114.75-108.64s51.8-108.64,114.75-108.64,114.75,49.04,114.75,108.64Z" transform="translate(-156.42 -301.42)"/><path class="cls-4" d="M296.82,411.23c-40.6,0-72.02-8.11-53.12,29.91,21.51,43.27,24.97,77.85,39.26,90.92,5.12,4.68,10.33,3.98,19.94,1.16,48.95-14.33,44.1-43.08,48.08-86.95C355.42,397.24,337.41,411.23,296.82,411.23Z" transform="translate(-156.42 -301.42)"/><path class="cls-4" d="M243.18,421.86l-5.16,9.36a151.34,151.34,0,0,0-9.76,21.5l-8.68,23.89s50.5,30.31,69.98,49.88c19.39,19.48-40.51-111.31-40.24-111.37Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M257.53,434.02l-12.09.58a6.6811,6.6811,0,0,1-6.99-6.38l-3.8-79.88a6.6983,6.6983,0,0,1,6.36-7.02l12.09-.58a6.6811,6.6811,0,0,1,6.99,6.38l3.8,79.88A6.7,6.7,0,0,1,257.53,434.02Z" transform="translate(-156.42 -301.42)"/><path class="cls-6" d="M282.59,471.8h-4.9a10.8359,10.8359,0,0,1-10.84-10.84V419.87a10.8359,10.8359,0,0,1,10.84-10.84h4.9a10.8359,10.8359,0,0,1,10.84,10.84v41.09A10.8359,10.8359,0,0,1,282.59,471.8Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M313.37,477.75h-3.5a11.5443,11.5443,0,0,1-11.54-11.54v-47.3a11.5443,11.5443,0,0,1,11.54-11.54h3.5a11.5443,11.5443,0,0,1,11.54,11.54v47.3A11.5379,11.5379,0,0,1,313.37,477.75Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M344.34,434.22l-13.03-1.21a5.5641,5.5641,0,0,1-5.01-6.06l5.52-59.62a5.55,5.55,0,0,1,6.03-5.03l13.03,1.21a5.5641,5.5641,0,0,1,5.01,6.06l-5.52,59.62A5.5366,5.5366,0,0,1,344.34,434.22Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M289.62,498.47l5.23,4.89c2.1,7.88.94,21.09-3.93,27.62-2.03,2.73-4.86,2.52-6.15,1.49l-76.72-59.94,13.56-15.46,44.24,24.2A117.452,117.452,0,0,1,289.62,498.47Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M222.68,460.41l-3.1,11.33c-.31,1.14-1.07,1.91-1.88,1.92l-28.42.23c-1.14.01-1.95-1.47-1.72-3.15l1.73-12.53c.05-.36.9-.99,2.16-1.73a26.5,26.5,0,0,1,20.45-2.63l9.09,2.59C222.25,456.48,223.16,458.63,222.68,460.41Z" transform="translate(-156.42 -301.42)"/><polygon class="cls-7" points="66.39 178.72 49.71 166.8 58.19 158.66 63.44 157.62 72.06 162.9 72.64 175.47 66.39 178.72"/></svg>
+    <a href="/" class="logo">LAZZY PRO</a>
+  </div>
+  <div class="header-right">
+    <a href="/" class="active">Home</a>
+  </div>
+</div>
+
+<!-- Header-->
+
+
+<div class="city2-even">
+    <button class="button button2"><span>Add Shortcut Key</span></button>
+   <form method="post">
+    <div class="dropdowns">
+     <select name="key1" id="cars1">
+       
+     <!--  <option selected value="none" >None</option> -->
+       <option value="ctrl">Ctrl</option>
+           <option value="shift">Shift</option>
+           <option value="alt">Alt</option>
+           <option value="winkey">Winkey</option>
+           <option value="tab">Tab</option>
+           <option value="space">Space</option>
+           <option value="backspace">Backspace</option>
+           <option value="enter">Enter</option>
+           <option value="fn">Fn</option>
+           <option value="a">A</option>
+           <option value="b">B</option>
+           <option value="c">C</option>
+           <option value="d">D</option>
+           <option value="e">E</option>
+           <option value="f">F</option>
+           <option value="g">G</option>
+           <option value="h">H</option>
+           <option value="i">I</option>
+           <option value="j">J</option>
+           <option value="k">K</option>
+           <option value="l">L</option>
+           <option value="m">M</option>
+           <option value="n">N</option>
+           <option value="o">O</option>
+           <option value="p">P</option>
+           <option value="q">Q</option>
+           <option value="r">R</option>
+         <option value="s">S</option>
+         <option value="t">T</option>
+         <option value="u">U</option>
+         <option value="v">V</option>
+         <option value="w">W</option>
+         <option value="x">X</option>
+         <option value="y">Y</option>
+         <option value="z">Z</option>
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+
+     </select>
+     <br><br>
+
+     <select name="key2" id="cars1">
+      <option selected value="none" >None</option>
+      <option value="ctrl">Ctrl</option>
+          <option value="shift">Shift</option>
+          <option value="alt">Alt</option>
+          <option value="winkey">Winkey</option>
+          <option value="tab">Tab</option>
+          <option value="space">Space</option>
+          <option value="backspace">Backspace</option>
+          <option value="enter">Enter</option>
+          <option value="fn">Fn</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+          <option value="e">E</option>
+          <option value="f">F</option>
+          <option value="g">G</option>
+          <option value="h">H</option>
+          <option value="i">I</option>
+          <option value="j">J</option>
+          <option value="k">K</option>
+          <option value="l">L</option>
+          <option value="m">M</option>
+          <option value="n">N</option>
+          <option value="o">O</option>
+          <option value="p">P</option>
+          <option value="q">Q</option>
+          <option value="r">R</option>
+        <option value="s">S</option>
+        <option value="t">T</option>
+        <option value="u">U</option>
+        <option value="v">V</option>
+        <option value="w">W</option>
+        <option value="x">X</option>
+        <option value="y">Y</option>
+        <option value="z">Z</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br><br>
+
+      <select name="key3" id="cars1">
+        <option selected value="none" >None</option>
+       <option value="ctrl">Ctrl</option>
+           <option value="shift">Shift</option>
+           <option value="alt">Alt</option>
+           <option value="winkey">Winkey</option>
+           <option value="tab">Tab</option>
+           <option value="space">Space</option>
+           <option value="backspace">Backspace</option>
+           <option value="enter">Enter</option>
+           <option value="fn">Fn</option>
+           <option value="a">A</option>
+           <option value="b">B</option>
+           <option value="c">C</option>
+           <option value="d">D</option>
+           <option value="e">E</option>
+           <option value="f">F</option>
+           <option value="g">G</option>
+           <option value="h">H</option>
+           <option value="i">I</option>
+           <option value="j">J</option>
+           <option value="k">K</option>
+           <option value="l">L</option>
+           <option value="m">M</option>
+           <option value="n">N</option>
+           <option value="o">O</option>
+           <option value="p">P</option>
+           <option value="q">Q</option>
+           <option value="r">R</option>
+         <option value="s">S</option>
+         <option value="t">T</option>
+         <option value="u">U</option>
+         <option value="v">V</option>
+         <option value="w">W</option>
+         <option value="x">X</option>
+         <option value="y">Y</option>
+         <option value="z">Z</option>
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+     </select>
+     <br><br>
+    </div>
+
+    <button type="submit" class="bt3"><span>Add This Gesture</span></button>
+       <p>{{error}}</p>
+    <p>Click the Above Button to Add Selected Gesture</p>
+  </div>
+</form>
+</body>
+</html>

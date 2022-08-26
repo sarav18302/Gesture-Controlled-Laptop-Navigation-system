@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styleshseet.css') }}">
+<!-- <link rel="stylesheet" href="../static//stylesheets/styleshseet.css"> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size:15px;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+body{
+    background: white;
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.home{
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+    background:url(static/images/home-img.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 5rem;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.home .content p{
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.8;
+    padding:1rem 0;
+    color:#eee;
+}
+.about .row{
+    display: flex;
+    align-items: center;
+    background:white;
+    flex-wrap: wrap;
+
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+
+}
+
+.about .row .image img{
+    width: 100%;
+}
+.about .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color:black;
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color: black;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-family: 'Montserrat';
+}
+th{
+  color: #000000;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 25px;
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f8f8;
+  font-family: 'Montserrat';
+}
+
+h2{
+  color: #000000;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 40px;
+  padding-left: 15px;
+}
+
+.tab{
+  padding: 30px;
+}
+</style>
+</head>
+<body class="'scroll scroll3">
+<!-- Header-->
+<div class="header">
+  <div style="display: flex;flex-direction: row;">
+    <svg id="Layer_1" data-name="Layer 1" width="60px" height="60px" viewBox="0 0 264.1 255.42"><defs><style>.cls-1{fill:#f1f2f2;}.cls-2{fill:#1d4e26;}.cls-3{fill:#81c341;}.cls-4,.cls-5,.cls-6{stroke:#000;stroke-miterlimit:10;}.cls-5,.cls-6,.cls-7{fill:#fff;}.cls-5{stroke-width:6px;}.cls-6{stroke-width:7px;}</style></defs><ellipse class="cls-1" cx="132.05" cy="127.71" rx="132.05" ry="127.71"/><path d="M289.73,429.89l63.63-107.44c39.61,22.07,64.12,63.13,64.12,107.44,0,67.97-57.67,123.9-127.75,123.9s-127.75-55.93-127.75-123.9c0-47.73,28.43-91.38,72.87-111.88Z" transform="translate(-156.42 -301.42)"/><ellipse class="cls-2" cx="131.72" cy="128.35" rx="120.1" ry="116.54"/><path class="cls-3" d="M286.48,429.77l5.17,108.53c-1.72.07-3.44.11-5.17.11-62.95,0-114.75-49.04-114.75-108.64s51.8-108.64,114.75-108.64,114.75,49.04,114.75,108.64Z" transform="translate(-156.42 -301.42)"/><path class="cls-4" d="M296.82,411.23c-40.6,0-72.02-8.11-53.12,29.91,21.51,43.27,24.97,77.85,39.26,90.92,5.12,4.68,10.33,3.98,19.94,1.16,48.95-14.33,44.1-43.08,48.08-86.95C355.42,397.24,337.41,411.23,296.82,411.23Z" transform="translate(-156.42 -301.42)"/><path class="cls-4" d="M243.18,421.86l-5.16,9.36a151.34,151.34,0,0,0-9.76,21.5l-8.68,23.89s50.5,30.31,69.98,49.88c19.39,19.48-40.51-111.31-40.24-111.37Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M257.53,434.02l-12.09.58a6.6811,6.6811,0,0,1-6.99-6.38l-3.8-79.88a6.6983,6.6983,0,0,1,6.36-7.02l12.09-.58a6.6811,6.6811,0,0,1,6.99,6.38l3.8,79.88A6.7,6.7,0,0,1,257.53,434.02Z" transform="translate(-156.42 -301.42)"/><path class="cls-6" d="M282.59,471.8h-4.9a10.8359,10.8359,0,0,1-10.84-10.84V419.87a10.8359,10.8359,0,0,1,10.84-10.84h4.9a10.8359,10.8359,0,0,1,10.84,10.84v41.09A10.8359,10.8359,0,0,1,282.59,471.8Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M313.37,477.75h-3.5a11.5443,11.5443,0,0,1-11.54-11.54v-47.3a11.5443,11.5443,0,0,1,11.54-11.54h3.5a11.5443,11.5443,0,0,1,11.54,11.54v47.3A11.5379,11.5379,0,0,1,313.37,477.75Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M344.34,434.22l-13.03-1.21a5.5641,5.5641,0,0,1-5.01-6.06l5.52-59.62a5.55,5.55,0,0,1,6.03-5.03l13.03,1.21a5.5641,5.5641,0,0,1,5.01,6.06l-5.52,59.62A5.5366,5.5366,0,0,1,344.34,434.22Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M289.62,498.47l5.23,4.89c2.1,7.88.94,21.09-3.93,27.62-2.03,2.73-4.86,2.52-6.15,1.49l-76.72-59.94,13.56-15.46,44.24,24.2A117.452,117.452,0,0,1,289.62,498.47Z" transform="translate(-156.42 -301.42)"/><path class="cls-5" d="M222.68,460.41l-3.1,11.33c-.31,1.14-1.07,1.91-1.88,1.92l-28.42.23c-1.14.01-1.95-1.47-1.72-3.15l1.73-12.53c.05-.36.9-.99,2.16-1.73a26.5,26.5,0,0,1,20.45-2.63l9.09,2.59C222.25,456.48,223.16,458.63,222.68,460.41Z" transform="translate(-156.42 -301.42)"/><polygon class="cls-7" points="66.39 178.72 49.71 166.8 58.19 158.66 63.44 157.62 72.06 162.9 72.64 175.47 66.39 178.72"/></svg>
+    <a href="/" class="logo">LAZZY PRO</a>
+  </div>
+  <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#footer">Contact</a>
+    <a href="#about">About</a>
+  </div>
+</div>
+<!-- Header-->
+<!-- nav bar-->
+
+<ul class="nav-bar">
+    <li><a href="#home" class="active">Home</a></li>
+
+    <li style="float:right"><a  href="#about">About</a></li>
+  </ul>
+  
+<!-- nav bar-->
+
+
+<!-- Div tags -->
+<div class="flex home-opt">
+    <div class="city">
+
+
+    <h1> <a ><strong>Quick Start</strong></a></h1>
+    <p >Start a quick demo<br>with default gestures</p>
+        <a href="/default_detection" ><button class="button button2"><span>Click here</span></button></a>
+    </div>
+
+    <div class="city">
+
+    <h2> <a ><strong>Registered user</strong></a></h2>
+    <p>Already have an account? <br>Click to login</p>
+    <a href="/registered_user" ><button class="button button2"><span>Click here</span></button></a>
+    </div>
+
+    <div class="city">
+
+    <h2> <a target="_blank" ><strong>New user</strong></a></h2>
+    <p >Are you a new user? Click here <br>to register!</p>
+    <a href="/new_user" ><button class="button button2"><span>Click here</span></button></a>
+    </div>
+
+    </div>
+<!-- End of Div tags -->
+<section class="home" id="home" >
+
+    <div class="content">
+
+        <div>
+            <h3>Access any key using Hand Gesture</h3>
+        <p>Instead of using keys we can use hand gestures for simplifying the task ( like using one gesture is better than clicking 2 to 3 buttons at a time)</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about part -->
+<section class="about" id="about">
+
+    <h1 class="heading"> About us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="static/images/about_pic.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>OUR MISSION</h3>
+            <p>Our Mission is to develop a web application which recognizes the users gestures and performs the shortcut key operations like crtl + c, ctrl+v, alt+f4, etc. Users can use the application while he/she is involved in his daily works in the PC.The application runs in the background and user can also pause/resume the detection feature. Apart from default shortcut keys assigned in the application, users can also make their custom set of shortcut keys for the given gestures. Along with user credential login, face recognition feature is also integrated for better security and effective login.</p>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- end of about part -->
+<!-- html table-->
+<h2>Shortcut key Operations</h2>
+
+
+
+<div class="row" style="padding: 30px;padding-left: 50px;">
+<table>
+  <tr>
+    <th>GESTURES</th>
+    <th>FUNCTIONALITY</th>
+  </tr>
+  <tr>
+    <td>Ctrl + A</td>
+    <td>Selects all text, images, and other objects on the page</td>
+  </tr>
+  <tr>
+    <td>Ctrl + B</td>
+    <td>Makes selected text bold</td>
+  </tr>
+   <tr>
+    <td>Ctrl+C</td>
+    <td>Copy any selected text or another object</td>
+  </tr>
+
+  <tr>
+  <td>Ctrl + D</td>
+    <td>In browser, creates a new bookmark/favorite for the current page. In Microsoft Excel and Google Sheets,it fills and overwrites a cell with the contents of the cell above it in a column. In Microsoft PowerPoint,it inserts a duplicate of the selected slide. In Microsoft Word,it opens the font preferences window. In the Linux command-line shell,logs out of the interface.</td>
+  </tr>
+  <tr>
+    <td>Ctrl + F</td>
+    <td>In Microsoft Outlook, it forwards an e-mail.
+    In all other major applications,it opens the find box that lets you search for characters, text, and phrases on the current page.</td>
+  </tr>
+
+  <tr>
+    <td>Ctrl + I</td>
+    <td>Italicizes selected text</td>
+  </tr>
+
+  <tr>
+    <td>Ctrl + L</td>
+    <td>In Microsoft Excel and all other spreadsheet programs,it opens the Create Table dialog box.
+    In Microsoft PowerPoint, Microsoft Word and other word processors, the Ctrl+L keyboard shortcut aligns an object/selected text with the left side.
+    When using the bash shell, you can clear the screen by pressing Ctrl+L.
+    In all major Internet browsers  pressing Ctrl+L brings the address bar (location bar/omnibox) into focus.
+</td>
+  </tr>
+  <tr>
+  <td>Ctrl + N</td>
+    <td>In all major Internet browsers,it opens a new application window.
+    In Microsoft Excel and most other spreadsheet programs,it creates a new blank worksheet.
+    In Microsoft Outlook,it has multiple uses. For example, if you're in the Mail section, it creates a new e-mail message. If you're in the Calendar section, it creates a new appointment.
+    In Microsoft PowerPoint, it opens a new blank slide deck in another PowerPoint program window.
+    In Microsoft Word and other word processors,it creates a new document.</td>
+  </tr>
+  <tr>
+   <td>Ctrl + O</td>
+    <td>Open a new document, page, URL, or other files.</td>
+  </tr>
+  <tr>
+    <td>Ctrl + P</td>
+    <td>Open a print window to print the page you're currenlty viewing</td>
+
+  </tr>
+   <tr>
+    <td>Ctrl + S</td>
+    <td>Save changes to a file</td>
+
+  </tr>
+
+    <tr>
+    <td>Ctrl + U</td>
+    <td>Underlines selected texts</td>
+  </tr>
+  <tr>
+    <td>Ctrl + V</td>
+    <td>Pastes any text, image, video, or other object into the active application</td>
+  </tr>
+   <tr>
+    <td>Ctrl + W</td>
+    <td>Close/open tab in a browser or close a document in Word</td>
+  </tr>
+  <tr>
+    <td>Ctrl + X</td>
+    <td>Cut a selected section of text, image, or other object.</td>
+  </tr>
+  <tr>
+    <td>Ctrl + Y</td>
+    <td> In all major Internet browsers, Microsoft excel, Microsoft powerpoint pressing Ctrl+Y will redo any previously-undone action.
+    In the edit command window,it deletes the current line.</td>
+  </tr>
+
+   <tr>
+    <td>Ctrl + Z</td>
+    <td>Undo any change made in the currently opened file. </td>
+  </tr>
+
+  <tr>
+    <td>Ctrl + F5</td>
+    <td>Refreshes or reloads the page or document window</td>
+  </tr>
+
+  <tr>
+    <td>I</td>
+    <td>Open the Miniplayer.</td>
+  </tr>
+
+  <tr>
+    <td>J</td>
+    <td>Seek backward 10 seconds in player.</td>
+  </tr>
+
+  <tr>
+    <td>K</td>
+    <td>Pause/Play in player.</td>
+  </tr>
+
+  <tr>
+    <td>L</td>
+    <td>Seek forward 10 seconds in player.</td>
+  </tr>
+
+  <tr>
+    <td>F</td>
+    <td>Activate full screen. If full screen mode is enabled, activate F again or press escape to exit full screen mode.</td>
+  </tr>
+
+  <tr>
+    <td>T</td>
+    <td>Open the Player in Theater Mode.</td>
+  </tr>
+
+
+ <tr>
+    <td>Alt + F</td>
+    <td>Open the file menu or file tab depending on the program you're using.</td>
+  </tr>
+
+
+
+
+
+   <tr>
+    <td>Alt +E</td>
+    <td>Open the Edit file menu option for programs supporting a file menu</td>
+  </tr>
+
+
+
+
+
+
+   <tr>
+    <td>Windows key+Tab</td>
+    <td>Cycle through open programs on the Taskbar.</td>
+  </tr>
+
+  <tr>
+    <td>Windows key+Ctrl+O</td>
+    <td>Opens the Virtual Keyboard<td>
+  </tr>
+
+   <tr>
+    <td>Windows key+Down arrow</td>
+    <td> Minimizes the screen. Also, when in the side by side viewing mode, this shortcut takes the screen back to a minimized size</td>
+  </tr>
+
+   <tr>
+    <td>Windows key+Up arrow</td>
+    <td>When in the side by side viewing mode, this shortcut takes the screen back to full size.</td>
+  </tr>
+
+  <tr>
+    <td>Windows key+ I</td>
+    <td>Open the Windows 10 Settings window.</td>
+  </tr>
+  <tr>
+
+    <td>Windows key+ D</td>
+    <td>Display and hide the desktop.</td>
+  </tr>
+  <tr>
+
+    <td>Windows key+ L</td>
+    <td>Lock device.</td>
+  </tr>
+
+  <tr>
+    <td>Windows key + Shift + S</td>
+    <td>Capture part of the screen with Snip & Sketch.</td>
+  </tr>
+
+
+  <tr>
+    <td>Windows key+Left arrow</td>
+    <td>Shrinks the window to 1/2 screen on the left side for side by side viewing.</td>
+  </tr>
+
+  <tr>
+    <td>Windows key+Right arrow</td>
+    <td>Shrinks the window to 1/2 screen on the right side for side by side viewing.</td>
+  </tr>
+
+  <tr>
+    <td>Alt+Tab</td>
+    <td>Pressing Alt+Tab moves from left-to-right in the available open windows.</td>
+  </tr>
+
+ <tr>
+    <td>Alt+f4</td>
+    <td>Used to close the currently-active window</td>
+  </tr>
+
+  <tr>
+    <td>End key</td>
+    <td>The End key is a key found on a computer keyboard that moves the cursor to the end of the line, document, page, cell, or screen</td>
+  </tr>
+
+
+  <tr>
+    <td>Space key</td>
+    <td>Gives space between words, letter,number etc., during typing</td>
+  </tr>
+   <tr>
+    <td>Enter key</td>
+    <td>Return to the next line or starts a new paragraph in a word processor.Activate a button or another object. </td>
+  </tr>
+
+  <tr>
+    <td>Esc key</td>
+    <td>Allows the user to abort, cancel, or close an operation. </td>
+  </tr>
+
+  <tr>
+    <td>Left Arrow</td>
+    <td> Move the cursor left in the current line</td>
+  </tr>
+
+  <tr>
+    <td>Right Arrow</td>
+    <td> Move the cursor right in the current line</td>
+  </tr>
+
+  <tr>
+    <td>Up Arrow</td>
+    <td> Move the cursor Up.</td>
+  </tr>
+
+  <tr>
+    <td>Down Arrow</td>
+    <td> Move the cursor Down.</td>
+  </tr>
+
+
+  <tr>
+  <td>F1</td>
+  <td>Activates help for current open application. If you're at the Windows desktop, this activates the help for Windows.</td>
+  </tr>
+
+  <tr>
+    <td> F2 </td>
+      <td>Renames a highlighted icon, file, or folder in all versions of Windows. </td>
+
+</tr>
+
+<tr>
+<td>F3</td>
+<td> Starts find or search when at the Windows desktop in all versions of Windows.</td>
+</tr>
+
+<tr>
+<td>F4</td>
+<td>Opens the drive selection or address bar when browsing files in Windows Explorer.</td>
+</tr>
+
+
+
+<tr>
+<td> F5</td>
+<td>Allows you to refresh or reload the page or document window..</td>
+ </tr>
+
+<tr>
+  <td>F6</td>
+  <td>While in Windows Explorer, F6 moves the cursor to different Windows Explorer pane or in Windows 7 browse available drives.</td>
+  </tr>
+
+ <tr>
+  <td> F7</td>
+  <td>Used to spell check and grammar check a document in Microsoft Apps.</td>
+  </tr>
+  <tr>
+    <td> F8</td>
+    <td>Pressing F8 over and over as the computer is booting starts the computer in Safe Mode.</td>
+    </tr>
+  <tr>
+    <td>F9</td>
+    <td>Refreshes a document in Microsoft Word and sends and receives emails in Outlook.</td>
+    </tr>
+  <tr>
+   <td> F10</td>
+   <td>Activates the file menu bar in all versions of Windows.</td>
+  </tr>
+  <tr>
+    <td> F11</td>
+    <td> Enters and exits full screen mode in Internet browsers.</td>
+  </tr>
+
+  <tr>
+    <td> F12</td>
+    <td> Opens the Save As dialog box in Microsoft Word</td>
+   </tr>
+
+
+
+</table>
+
+</div>
+
+
+<!-- Footer-->
+
+<footer style="background-color:#000000;" id="footer">
+  <div class="foot" style="background-color:#000000;">
+    <p style="font-size: 50px; margin-top: 30px; text-align: center; font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;">Lazzy Pro<br></p>
+          <div class="" style="display:flex;flex-direction:row;justify-content:space-evenly;font-color:white;">
+
+    <div class="social" style="color:white;">
+      <pre style="color:white;"><i class="icon ion-android-call"></i> +91 82201 49479 </pre>
+      <pre style="color:white;"><i class="icon ion-email"></i> lazzypro2022@gmail.com</pre>
+      <pre style="color:white;"><i class="bi bi-globe2"></i>lazzypro.com</pre>
+    </div>
+
+    <div class="rightfoot" style="color:white;">
+      <pre style="color:white;">
+           Lazzy Pro,
+           Chennai Institute of Technology
+           Sarathy Nagar, Kundrathur
+           Chennai - 600069 ,
+           TamilNadu.
+           </pre>
+      </div>
+      </div>
+
+
+  <p class="copyright" style="margin-bottom:0px;">LazzyPro © 2022 | all rights reserved</p>
+
+  </div>
+
+
+  </footer>
+
+<!-- End of Footer-->
+</body>
+</html>

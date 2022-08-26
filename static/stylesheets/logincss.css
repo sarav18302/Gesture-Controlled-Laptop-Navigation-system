@@ -1,0 +1,107 @@
+
+body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: white;
+}
+button { 
+       background-color: black; 
+       width: 100px;
+        color: whitesmoke; 
+        padding: 15px; 
+        margin: 10px 5px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+ form { 
+     width: 40%;
+     height: 360px;
+    margin-left: 50px;
+        border: 3px solid #f1f1f1; 
+    } 
+
+
+    .container { 
+        padding: 50px;
+        align-content: center;
+        background-color: lightblue;
+    }  
+
+
+ input[type=text], input[type=password] { 
+        width: 60%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: block; 
+        border: 2px solid green; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+    background-color: black; 
+       width: 100px;
+        color: whitesmoke; 
+        padding: 15px; 
+        margin: 10px 5px; 
+        border: none; 
+        cursor: pointer; 
+    } 
+      
+   
+ 
+
+.container a{
+    display: block;
+}
+
+
+
+
+.container1 {
+    margin-left: 30px;
+	width: 700px;
+    height: 500px;
+    border: 3px solid #f1f1f1; 
+}
+.fbutton{
+    background-color:blue; 
+    width: 200px;
+     color: whitesmoke; 
+     padding: 15px;
+     border: none; 
+     cursor: pointer; 
+}
+.Flext{
+    display: flex;
+}
+.videoElement {
+	width: 700px;
+	height: 400px;
+	background-color: rgb(156, 156, 156);
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg);
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    text-align: center;
+    font-weight: 300px;
+    margin: 0px;
+    background-color: black;
+    margin-bottom: 10px;
+    height:60px;
+    padding-top: 10px;
+}
+
+.row{
+    display: inline;
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+  

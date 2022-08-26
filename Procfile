@@ -1,1 +1,1 @@
-web:gunicorn sih_app.py:app
+web:gunicorn sih_app:app
